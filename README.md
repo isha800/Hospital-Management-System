@@ -1,59 +1,61 @@
-# HospitalManagement
+#  Hospital Management System
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.0.4.
+A full-stack **Hospital Management System** built using **Angular (Frontend)**, **Spring Boot (Backend)**, and **MySQL (Database)**.  
+It allows hospitals to efficiently manage doctors, patients, appointments, user profiles, and more — all through a secure and interactive dashboard.
 
-## Development server
+---
 
-To start a local development server, run:
+##  Live Features Overview
 
-```bash
-ng serve
-```
+ **User Authentication**
+- User registration & login
+- JWT-based authentication
+- Forgot password functionality
+- Auth guard protection for secured routes
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+**Admin Dashboard**
+- Real-time counts of:
+  -  Doctors
+  - Patients
+  - Appointments
+- View **upcoming appointments** directly on dashboard
+- Quick navigation links to profile, home, and management screens
 
-## Code scaffolding
+ **Doctor Management**
+- Add, edit, delete doctors
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+ **Patient Management**
+- Add, update, delete patient records
 
-```bash
-ng generate component component-name
-```
+**Appointment Management**
+- Book, update, cancel appointments
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+ **Profile Management**
+- Admin can view & edit their profile
 
-```bash
-ng generate --help
-```
+ **API Integration**
+- Fully tested using **Postman**
 
-## Building
+---
 
-To build the project run:
+## Tech Stack
 
-```bash
-ng build
-```
+| Layer      | Technology             |
+|------------|-------------------------|
+| Frontend   | Angular 20              |
+| Backend    | Spring Boot (Java)      |
+| Database   | MySQL                   |
+| Auth       | JWT (JSON Web Tokens)   |
+| Tools      | Postman, GitHub, IntelliJ, VS Code |
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+---
 
-## Running unit tests
+##  Project Structure
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+hospital-management-system/
+├── angular/ # Frontend Angular app
+├── springboot/ # Backend Spring Boot project
+├── database/ # SQL dump file (hospital_db.sql)
 
-```bash
-ng test
-```
 
-## Running end-to-end tests
 
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
