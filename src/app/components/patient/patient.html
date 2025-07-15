@@ -1,0 +1,39 @@
+<div class="container">
+  <h2><span class="highlight">Patients</span> Management</h2>
+
+  <div class="form-container">
+  <form (ngSubmit)="addOrUpdatePatient()" #patientForm="ngForm">
+  <input [(ngModel)]="newPatient.name"  placeholder="Patient's Name" name="name"  pattern="^[a-zA-Z ]+$" required>
+  <input [(ngModel)]="newPatient.age"  placeholder="Age"  pattern="^[0-9]{10}$" name="age" required>
+  <input [(ngModel)]="newPatient.gender" placeholder="Gender" name="gender"  pattern="^[a-zA-Z ]+$" required>
+  <input [(ngModel)]="newPatient.contact"  placeholder="Contact"   pattern="^[0-9]{10}$"  maxlength="10" name="contact" required>
+  <button type="submit" class="add" [disabled]="patientForm.invalid">{{ isEditMode ? 'Update' : 'Add' }} Patient</button>
+    </form>
+    <br><br>
+<table>
+    <thead>
+      <tr>
+        <th>Patient Name</th>
+        <th>Age</th>
+        <th>Gender</th>
+        <th>Contact</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngIf="patients.length === 0">
+      <td colspan="5" style="color:red ; text-align:center;"><b>No records found.</b></td>
+    </tr>
+      <tr *ngFor="let patient of patients">
+        <td> {{ patient.name }}</td>
+        <td>{{ patient.age }} </td>
+        <td>{{ patient.gender }}</td>
+        <td> {{ patient.contact }}</td>
+        <td><button class="delete-btn" (click)="deletePatient(patient)">Delete</button>&nbsp; &nbsp;
+            <button class="edit-btn" (click)="editPatient(patient)">Edit</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div></div>
+  

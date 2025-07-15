@@ -1,0 +1,38 @@
+<div class="container">
+  <h2><span style="color:#2653eb">Doctors Management</span></h2>
+  
+  <form (ngSubmit)="isEditing ? updateDoctor() : addDoctor()" #doctorForm="ngForm">
+    <input type="text" placeholder="Doctor's Name" [(ngModel)]="newDoctor.name" pattern="^[a-zA-Z ]+$"  required  title="Only letters and spaces allowed" name="name"  />
+    <input type="text" placeholder="Specialization" [(ngModel)]="newDoctor.specialization" pattern="^[a-zA-Z\s]*$" name="specialization" required />
+    <input type="text" placeholder="Contact" [(ngModel)]="newDoctor.contact" name="contact" pattern="^[0-9]{10}$"  maxlength="10" required />
+    <button type="submit" [disabled]="doctorForm.invalid">{{ isEditing ? 'Update Doctor' : 'Add Doctor' }}</button>
+    <button type="button" *ngIf="isEditing" (click)="cancelEdit()" class="cancel-btn">Cancel</button>
+  </form>
+
+  <br /><br />
+  <table class="doctor-table" >
+    <thead>
+      <tr>
+        <th>Doctor Name</th>
+        <th>Specialization</th>
+        <th>Contact</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+       <tr *ngIf="doctors.length === 0">
+      <td colspan="4" style="color:red ; text-align:center;"><b>No records found.</b></td>
+    </tr>
+      <tr *ngFor="let doctor of doctors; let i = index">
+        <td>{{ doctor?.name }}</td>
+        <td>{{ doctor?.specialization }}</td>
+        <td>{{ doctor?.contact }}</td>
+        <td>
+          <button class="delete-btn" (click)="deleteDoctor(doctor)">Delete</button>
+          <button class="edit-btn" (click)="editDoctor(doctor)">Edit</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+     

@@ -1,0 +1,88 @@
+.logout button{
+    background-color:red;
+     color:white;
+      
+      border-radius:0px; 
+      text-decoration:none;
+      text-align:right; 
+      padding: 10px;
+      float:right;
+      font-size:large;
+      font-family:'Times New Roman', Times, serif;
+}
+.title{
+       text-align:center;
+        color:white;
+        font-family:'Time New Roman';
+        background-color:brown;
+        font-size:28px;
+}
+.cards
+{
+    display:flex;
+    justify-content: space-around;
+    margin:20px ,0;
+}
+.card{
+    width:20%;
+    padding: 20px;
+    border: radius 12px;
+    color:#fff;
+    text-align:center;
+    height: 300px;
+
+}
+.card.home{
+  background-color: #e5351e;
+    font-size:30px;
+}
+.card.doctors
+{
+    background-color: #1e88e5;
+    font-size:30px;
+}
+.card.patients
+{
+    background-color: #43a047;
+    font-size:30px;
+}
+.card.appointments
+{
+    background-color: #8e24aa;
+    font-size:30px;
+}
+.card.profile
+{
+    background-color: #f59e0b;
+    font-size:30px;
+}
+.card button{
+  color:black;
+  cursor: pointer;
+  padding:8px;
+  margin-top: 10px;
+  border:none;
+  border-radius: 5px;
+  font-weight: bold;
+  background-color:white ;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+  font-family: Arial, sans-serif;
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: center;
+}
+
+th {
+  background-color: #f0f0f0;
+}
+h1{
+    text-align: center;
+}

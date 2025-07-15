@@ -1,0 +1,85 @@
+.container {
+  max-width: 500px;
+  margin: 20px auto;
+  background: #fff;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #ccc;
+  font-family: Arial, sans-serif;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.highlight {
+  color:  #10b981;
+}
+
+.form-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.form-container input {
+  flex: 1 1 48%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.add  {
+  width: 100%;
+  padding: 10px;
+  background-color: #047857; 
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.patient-card {
+  background-color: #f9f9f9;
+  padding: 15px;
+  border-radius: 6px;
+  margin-bottom: 10px;
+  box-shadow: 0 0 5px #ccc;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: center;
+}
+
+th {
+  background-color: #f0f0f0;
+}
+
+.edit-btn {
+   background-color: #1d4ed8;
+  color: white;
+  padding: 6px 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  width:80%;
+}
+.delete-btn {
+  background-color: red;
+  color: white;
+  padding: 6px 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  width:80%;
+}

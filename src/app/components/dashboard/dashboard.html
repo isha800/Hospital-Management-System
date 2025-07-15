@@ -1,0 +1,55 @@
+ <div class="logout">
+    <button  (click)="logout()"  name="logout">log out</button></div><br>
+ <h2 class="title">Welcome To Admin Dashboard</h2><br><br><br><br>
+ <div class="cards">
+<div class="card home">
+<p>Dashboard <b>Overview</b></p>
+<img src="home.png" height="60" width="60"> <br>
+<button routerLink="/dashboard">Go to Home </button>
+ </div>
+<div class="card doctors">
+<p>Doctors</p>
+<h3>{{ doctorCount}}</h3>
+<img src="doctor.avif" height="60" width="60"> <br>
+<button routerLink="doctor">Manage Doctors</button>
+ </div>
+<div class=" card patients ">
+<p>Patients</p>
+<h3>{{ PatientCount }}</h3>
+<img src="patient.webp" height="60" width="60"> <br>
+ <button routerLink="patient">Manage Patients</button>
+ </div>
+<div class=" card appointments">
+<p>Appointments</p>
+<h3>{{ appointmentCount }}</h3>
+<img src="appointment.avif" height="60" width="60"> <br>
+<button routerLink="appointment">Manage Appointments</button>
+</div>
+<div class=" card profile">
+<p>My Profile <b>View</b></p>
+<img src="profile.webp" height="70" width="70"> <br>
+<button routerLink="profile">View Profile</button></div>
+</div><br><br>
+ <h1>Upcoming Appointments</h1>
+<table >
+  <thead>
+    <tr>
+      <th>Patient</th>
+      <th>Doctor</th>
+      <th>Date</th>
+      <th>Time</th>
+    </tr>
+  </thead>
+  <tbody>
+     <tr *ngIf="appointments.length == 0">
+      <td colspan="4" style="color:red ;"><b>No upcoming appointments found.</b></td>
+    </tr>
+    <tr *ngFor="let appt of appointments">
+      <td>{{ appt.patientName }}</td>
+      <td>{{ appt.doctorName }}</td>
+      <td>{{ appt.date }}</td>
+      <td>{{ appt.time }}</td>
+    </tr></tbody>
+    </table>
+<router-outlet></router-outlet>
+

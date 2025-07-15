@@ -1,0 +1,20 @@
+<div class="form-container">
+  <h2 class="title">Welcome to Healthcare Hospital</h2>
+  <div class="tab-buttons">
+    <button [class.active]="showLogin" (click)="showLogin = true">Login</button>
+    <button [class.active]="!showLogin" (click)="showLogin = false">Register</button>
+  </div>
+  <form *ngIf="showLogin" (ngSubmit)="login()" class="form-box">
+    <input type="email" [(ngModel)]="loginEmail" name="loginEmail" placeholder="Email" required />
+    <input type="password" [(ngModel)]="loginPassword" name="loginPassword" placeholder="Password" required />
+    <button type="submit">Login</button>
+    <a routerLink="/forgot-password" class="forgot-link">Forgot Password?</a>
+  </form>
+  <form *ngIf="!showLogin" (ngSubmit)="register()" class="form-box">
+    <input type="text" [(ngModel)]="registerName" name="registerName" placeholder="Full Name" required />
+    <input type="email" [(ngModel)]="registerEmail" name="registerEmail" placeholder="Email" required />
+    <input type="password" [(ngModel)]="registerPassword" name="registerPassword" placeholder="Password" required />
+    <button type="submit">Register</button>
+  </form>
+</div>
+ 

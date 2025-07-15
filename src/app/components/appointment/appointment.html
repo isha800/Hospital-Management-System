@@ -1,0 +1,57 @@
+ <div class="container">
+  <h2><span class="highlight">Appointments</span> Management</h2>
+ <div class="card">
+ <h3>Book New Appointment</h3>
+    <div class="form-grid">
+       <select [(ngModel)]="selectedPatient" required>
+    <option disabled selected>Select Patient</option>
+    <option *ngFor="let p of patients" [value]="p">{{ p }}</option>
+  </select>
+
+  <select [(ngModel)]="selectedDoctor" required>
+    <option disabled selected>Select Doctor</option>
+    <option *ngFor="let d of doctors" [value]="d">{{ d }}</option>
+  </select>
+      <input type="date" [(ngModel)]="selectedDate"  required />
+      <input type="time" [(ngModel)]="selectedTime" required />
+    <button (click)="bookAppointment()" class="appoint-btn">
+      {{ editingAppointment ? 'Update Appointment' : 'Book Appointment' }}
+    </button><br>
+
+    <button *ngIf="editingAppointment" class="cancel-btn" (click)="clearForm()">
+      Cancel Edit
+    </button></div>
+     <br><br>
+
+    <h3>Appointments Table</h3>
+    <table class="appoint-table">
+      <thead>
+        <tr>
+          <th>Patient Name</th>
+          <th>Doctor Name</th>
+          <th>Date</th>
+          <th>Time</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+      <tr *ngIf="appointments.length === 0">
+      <td colspan="5" style="color:red ; text-align:center;"><b>No records found.</b></td>
+    </tr>
+        <tr  *ngFor="let app of appointments">
+          <td>{{ app.patientName }}</td>
+          <td>{{ app.doctorName }}</td>
+          <td>{{ app.date }}</td>
+          <td>{{ app.time }}</td>
+        <td><button class="delete-btn" (click)="deleteAppointment(app)">Delete</button>&nbsp;&nbsp;&nbsp;&nbsp;
+          <button class="edit-btn"(click)="editAppointment(app)">Edit</button>
+        </td>
+        </tr>
+      </tbody>
+    </table>
+    <ng-template #noData>
+  <p>No upcoming appointments found.</p>
+</ng-template>
+  </div>
+
+
