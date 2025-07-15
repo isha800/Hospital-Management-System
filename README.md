@@ -46,7 +46,7 @@ It allows hospitals to efficiently manage doctors, patients, appointments, user 
 | Backend    | Spring Boot (Java)      |
 | Database   | MySQL                   |
 | Auth       | JWT (JSON Web Tokens)   |
-| Tools      | Postman, GitHub, IntelliJ, VS Code |
+| Tools      | Postman, GitHub, Eclipse, VS Code |
 
 ---
 
